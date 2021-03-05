@@ -72,6 +72,7 @@ process index_samtools {
       }
 
 process remove_clipping {
+    conda "bioconda::samclip"
     tag "${index.simpleName}"
     publishDir "${params.outdir}/bam/${index.simpleName}", mode:'copy', pattern: '*.sam'
 
